@@ -1,0 +1,107 @@
+:root {
+    --bg-main: #0D1117;        /* Fundo principal */
+    --card-surface: #161B22;   /* Superfície do card */
+    --accent-orange: #FF9B21;  /* Botão principal */
+    --text-primary: #3FB950;   /* Texto de sucesso/destaque (Verde conforme rascunho) */
+    --text-support: #C9D1D9;   /* Texto de apoio / Labels */
+    --input-bg: #D1D5DB;       /* Cor dos inputs do rascunho */
+    --border-ui: #30363D;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-support);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilização dos Cards */
+.cep-card {
+    background-color: var(--card-surface);
+    border: 1px solid var(--border-ui);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.cep-card:hover {
+    border-color: var(--accent-orange);
+}
+
+.icon-arrow {
+    font-size: 0.7rem;
+    color: var(--accent-orange);
+}
+
+/* Inputs Estilizados */
+.custom-input {
+    background-color: var(--input-bg) !important;
+    border: none;
+    border-radius: 6px;
+    color: #111827 !important;
+    font-weight: 500;
+}
+
+.custom-input::placeholder {
+    color: #6B7280;
+}
+
+.custom-input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 155, 33, 0.25);
+    border-color: var(--accent-orange);
+}
+
+/* Botão Laranja */
+.btn-primary-custom {
+    background-color: var(--accent-orange);
+    border: none;
+    color: #000;
+    padding: 12px;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+}
+
+.btn-primary-custom:hover {
+    background-color: #e68a1d;
+    transform: translateY(-2px);
+    color: #000;
+}
+
+/* Área de Resultado */
+.result-area {
+    color: var(--text-primary); /* Verde vibrante do rascunho */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-left: 2px solid var(--accent-orange);
+    background-color: rgba(63, 185, 80, 0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.feedback-link{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+
+@media screen and (max-width: 450px){
+    .content{
+        display: grid;
+        grid-template-columns: 200px;
+        justify-items: center;
+    }
+    .feedback-link{
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
